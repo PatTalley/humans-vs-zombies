@@ -1,0 +1,38 @@
+import java.awt.Graphics;
+import java.awt.Color;
+
+public class Player extends GameObject{
+	
+	//acceleration & deceleration
+	private float _acc = 1f;
+	private float _dcc = 0.5f;
+	private KeyInput input;
+
+	public Player(float x, float y, ID id, KeyInput input) {
+		super(x, y, id);
+		this.input = input;
+		
+		//velX = 5;  //left-right speed
+		//velY = 1;  //top-bottom speed
+		
+	}
+
+	@Override
+	public void tick() {
+		x += velX;
+		y += velY;
+		
+		if(x > Game.WIDTH) x = 0;
+	
+	}
+
+	@Override
+	public void render(Graphics g) {
+		g.setColor(Color.BLACK);
+		g.fillRect((int)x, (int)y, 32, 32);
+		
+	}
+
+	
+	
+}

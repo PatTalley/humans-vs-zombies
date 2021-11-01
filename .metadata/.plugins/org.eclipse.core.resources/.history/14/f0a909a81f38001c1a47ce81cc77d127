@@ -1,0 +1,14 @@
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+
+public class MouseInput extends MouseAdapter{
+	
+	public void mousePress(MouseEvent e) {
+		
+		int mx = e.getX();
+		int my = e.getY();
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+import java.awt.Canvas;
+
+
+public class Game extends Canvas implements Runnable {
+
+	public static int WIDTH = 800, HEIGHT = 608;
+	public String title = "Zombie Game";
+	
+	private Thread thread;
+	private boolean isRunning = false;
+	
+	
+	//constructor
+	public Game() {
+		new Window(WIDTH, HEIGHT, title, this);
+	}
+	
+	
+	private synchronized void start() {
+			if(isRunning) return;
+			
+			thread = new Thread(this);
+			thread.start();
+	}
+	
+	
+	
+	// game loop
+	public void run() {
+		
+	}
+	
+	public static void main(String args[]) {
+		new Game();
+	}
+}
